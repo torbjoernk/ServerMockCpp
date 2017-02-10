@@ -22,4 +22,5 @@ target_include_directories(ServerMockCpp
 target_link_libraries(ServerMockCpp
                       PUBLIC CONAN_PKG::Poco)
 
+find_package(GoogleTest)
 add_subdirectory(tests)
