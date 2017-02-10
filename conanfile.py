@@ -1,7 +1,7 @@
 from conans import ConanFile, CMake
 
 
-class MockedServer(ConanFile):
+class ServerMockCpp(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     requires = (
         "Poco/1.7.5@lasote/stable",

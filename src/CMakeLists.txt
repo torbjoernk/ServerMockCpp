@@ -1,4 +1,4 @@
-set(MockedServer_SOURCES
-    ${CMAKE_CURRENT_LIST_DIR}/mocked_server/mocked_server.cpp
+set(ServerMockCpp_SOURCES
+    ${CMAKE_CURRENT_LIST_DIR}/server_mock/server_mock.cpp
     PARENT_SCOPE
 )

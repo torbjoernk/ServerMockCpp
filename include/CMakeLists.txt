@@ -1,4 +1,4 @@
-set(MockedServer_HEADERS
-    ${CMAKE_CURRENT_LIST_DIR}/mocked_server/mocked_server.hpp
+set(ServerMockCpp_HEADERS
+    ${CMAKE_CURRENT_LIST_DIR}/server_mock/server_mock.hpp
     PARENT_SCOPE
 )

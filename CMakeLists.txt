@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(MockedServer
+project(ServerMockCpp
         LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -13,13 +13,13 @@ enable_testing()
 add_subdirectory(include)
 add_subdirectory(src)
 
-add_library(MockedServer
-            ${MockedServer_SOURCES})
-target_include_directories(MockedServer
+add_library(ServerMockCpp
+            ${ServerMockCpp_SOURCES})
+target_include_directories(ServerMockCpp
                            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
                                   $<INSTALL_INTERFACE:include>
 )
-target_link_libraries(MockedServer
+target_link_libraries(ServerMockCpp
                       PUBLIC CONAN_PKG::Poco)
 
 add_subdirectory(tests)
