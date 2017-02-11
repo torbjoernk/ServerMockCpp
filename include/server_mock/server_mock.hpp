@@ -5,29 +5,22 @@
 #include "server_mock/types.hpp"
 #include "server_mock/request_mock.hpp"
 
-namespace Poco {
-namespace Net {
-class HTTPServer;
-} // namespace Net
-} // namespace Poco
-
-
 namespace server_mock {
 
-class ServerMock
-{
+class ServerMock {
  public:
   ServerMock() = default;
-  virtual ~ServerMock();
+  virtual ~ServerMock() = default;
 
-  virtual void start();
-  virtual void stop();
+  virtual void start() = 0;
+  virtual void stop() = 0;
 
-  RequestMock& onRequest(std::string const& endpoint, Method method, std::string const& payload, Headers headers);
-
- private:
-  std::unique_ptr<Poco::Net::HTTPServer> m_server;
-  std::map<std::string, RequestMock> m_requests;
+  virtual RequestMock& onRequest(std::string const& endpoint,
+                                 Method method,
+                                 std::string const& payload,
+                                 Headers headers) = 0;
 };
+
+std::unique_ptr<ServerMock> createServerMock();
 
 }  // namespace server_mock
