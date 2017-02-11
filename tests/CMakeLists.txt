@@ -1,5 +1,5 @@
 set(ServerMockCppTest_SOURCES
-    ${CMAKE_CURRENT_LIST_DIR}/scoped_server_test.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/server_mock_test.cpp
 )
 
 add_executable(ServerMockCppTest
