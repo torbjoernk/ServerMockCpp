@@ -5,6 +5,8 @@ class ServerMockCpp(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     requires = (
         "Poco/1.7.5@lasote/stable",
+        ("OpenSSL/1.0.2j@lasote/stable", "override"),
+        ("zlib/1.2.11@lasote/stable", "override"),
         "googletest/1.8.0@torbjoernk/staging"
     )
     generators = "cmake"

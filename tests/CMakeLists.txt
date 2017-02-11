@@ -7,3 +7,5 @@ add_executable(ServerMockCppTest
 target_link_libraries(ServerMockCppTest
                       PUBLIC ServerMockCpp
                              GoogleTest::gmock_main)
+set_target_properties(ServerMockCppTest
+					  PROPERTIES FOLDER Tests)

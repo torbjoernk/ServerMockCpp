@@ -4,6 +4,7 @@ project(ServerMockCpp
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set_property(GLOBAL PROPERTY USE_FOLDERS TRUE)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
@@ -14,6 +15,7 @@ add_subdirectory(include)
 add_subdirectory(src)
 
 add_library(ServerMockCpp
+			${ServerMockCpp_HEADERS}
             ${ServerMockCpp_SOURCES})
 target_include_directories(ServerMockCpp
                            PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
